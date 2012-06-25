@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  caballo: MyString
+  time: 1
+  velocidad: 1.5
+  jinete: MyString
+
+two:
+  caballo: MyString
+  time: 1
+  velocidad: 1.5
+  jinete: MyString

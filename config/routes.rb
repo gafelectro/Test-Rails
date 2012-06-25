@@ -1,4 +1,6 @@
 TestRails::Application.routes.draw do
+  resources :juegos
+
   resources :users
 
   # The priority is based upon order of creation:

@@ -1,0 +1,53 @@
+<h1>Listing juegos</h1>
+
+<table>
+  <tr>
+    <th>Caballo</th>
+    <th>Time</th>
+    <th>Velocidad</th>
+    <th>Jinete</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @juegos.each do |juego| %>
+  <tr>
+    <td><%= juego.caballo %></td>
+    <td><%= juego.time %></td>
+    <td><%= juego.velocidad %></td>
+    <td><%= juego.jinete %></td>
+
+    <td><%= link_to 'Show', juego %></td>
+    <td><%= link_to 'Edit', edit_juego_path(juego) %></td>
+    <td><%= link_to 'Destroy', juego, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Juego', new_juego_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Creacion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.created_at %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

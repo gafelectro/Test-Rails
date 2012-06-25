@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Caballo:</b>
+  <%= @juego.caballo %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @juego.time %>
+</p>
+
+<p>
+  <b>Velocidad:</b>
+  <%= @juego.velocidad %>
+</p>
+
+<p>
+  <b>Jinete:</b>
+  <%= @juego.jinete %>
+</p>
+
+
+<%= link_to 'Edit', edit_juego_path(@juego) %> |
+<%= link_to 'Back', juegos_path %>
