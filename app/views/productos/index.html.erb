@@ -1,0 +1,63 @@
+<h1>Listing productos</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Costo</th>
+    <th>NombreImagen</th>
+    <th>Tamaño de imagen</th>
+    <th>Imagen</th>
+    <th>Usuario</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @productos.each do |producto| %>
+  <tr>
+    <td><%= producto.nombre %></td>
+    <td><%= producto.costo %></td>
+    <td><%= producto.imagen_file_name %></td>
+    <td><%= producto.imagen_file_size %></td>
+    <td><%= image_tag producto.imagen.url('thumb') %></td>
+    <td></td>
+    <td><%= link_to 'Show', producto %></td>
+    <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
+    <td><%= link_to 'Destroy', producto, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Producto', new_producto_path %>
+
+
+<h1>Listing usuarios</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Edad</th>
+    <th>Avatar</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @usuarios.each do |usuario| %>
+  <tr>
+    <td><%= usuario.name %></td>
+    <td><%= usuario.edad %></td>
+    <td><%= image_tag usuario.avatar.url('thumb') %>
+    <td><%= link_to 'Show', usuario %></td>
+    <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
+    <td><%= link_to 'Destroy', usuario, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Usuario', new_usuario_path %>
+

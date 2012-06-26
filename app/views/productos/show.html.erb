@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @producto.nombre %>
+</p>
+
+<p>
+  <b>Costo:</b>
+  <%= @producto.costo %>
+</p>
+
+<p>
+  <b>nombre img:</b>
+  <%= @producto.imagen_file_name %>
+</p>
+
+<p>
+  <b>Tamano imagen:</b>
+  <%= @producto.imagen_file_size %>
+</p>
+
+<p>
+<%= image_tag @producto.imagen.url %>
+</p>
+
+<%= link_to 'Edit', edit_producto_path(@producto) %> |
+<%= link_to 'Back', productos_path %>

@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 gem 'mysql2'
 gem 'json'
 gem 'jquery-rails','2.0.0'
+gem "paperclip", "~> 3.0"
 
 group :development do
   gem 'sqlite3', '1.3.5'

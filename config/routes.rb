@@ -1,4 +1,8 @@
 TestRails::Application.routes.draw do
+  resources :usuarios
+
+  resources :productos
+
   resources :juegos
 
   resources :users

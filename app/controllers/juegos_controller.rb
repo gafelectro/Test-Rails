@@ -45,7 +45,7 @@ class JuegosController < ApplicationController
     respond_to do |format|
       if @juego.save
         format.html { redirect_to @juego, notice: 'Juego was successfully created.' }
-        format.json { render json: @juego, status: :created, location: @juego }
+         format.json { render json: @juego, status: :created, location: @juego }
       else
         format.html { render action: "new" }
         format.json { render json: @juego.errors, status: :unprocessable_entity }
@@ -80,4 +80,7 @@ class JuegosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  #lineas para paperclip
+
 end
