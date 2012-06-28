@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20120626164134) do
     t.string   "imagen_content_type"
     t.string   "imagen_file_size"
     t.string   "imagen_updated_at"
+    t.integer  "user_id"
   end
 
   create_table "tempos", :id => false, :force => true do |t|

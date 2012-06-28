@@ -12,9 +12,17 @@
   <% end %>
 
   <div class="field">
+    <%= f.label 'id usuario' %><br />
+    <%= f.text_field :usuario_id %>
+  </div>
+
+
+  <div class="field">
     <%= f.label :nombre %><br />
     <%= f.text_field :nombre %>
   </div>
+
+
   <div class="field">
     <%= f.label :costo %><br />
     <%= f.number_field :costo %>

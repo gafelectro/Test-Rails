@@ -20,7 +20,10 @@
     <td><%= producto.imagen_file_name %></td>
     <td><%= producto.imagen_file_size %></td>
     <td><%= image_tag producto.imagen.url('thumb') %></td>
-    <td></td>
+    <td>
+<% @usuarios.each do |usuario| %>
+    <%= usuario.name %>
+<% end %>
     <td><%= link_to 'Show', producto %></td>
     <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
     <td><%= link_to 'Destroy', producto, confirm: 'Are you sure?', method: :delete %></td>

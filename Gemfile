@@ -5,9 +5,11 @@ gem 'mysql2'
 gem 'json'
 gem 'jquery-rails','2.0.0'
 gem "paperclip", "~> 3.0"
+gem "will_paginate", "~> 3.0.3"
 
 group :development do
   gem 'sqlite3', '1.3.5'
+  gem 'rspec-rails', ">= 2.0.0.beta"
 end
 
 group :production do

@@ -1,5 +1,7 @@
 TestRails::Application.routes.draw do
-  resources :usuarios
+  resources :usuarios do
+    resources :productos
+  end
 
   resources :productos
 

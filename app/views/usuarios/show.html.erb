@@ -14,5 +14,23 @@
 <%= image_tag @usuario.avatar.url %>
 </p>
 
-<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
-<%= link_to 'Back', usuarios_path %>
+<h2>Productos a la venta</h2>
+<% @usuario.productos.each do |producto| %>
+  <p>
+    <b>Nombre:</b>
+    <%= producto.nombre %>
+  </p>
+ 
+  <p>
+    <b>Costo:</b>
+    <%= producto.costo %>
+  </p>
+
+  <p>
+    <b>Imagen:</b>
+    <%= image_tag producto.imagen.url('thumb') %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_producto_path(@producto) %> |
+<%= link_to 'Back', productos_path %>
