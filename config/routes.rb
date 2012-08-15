@@ -1,13 +1,18 @@
 TestRails::Application.routes.draw do
+  resources :saludos
+  resources :productos
+  resources :greetings
+  resources :juegos
+  resources :users
+  
+  get "static_pages/home"
+  get "static_pages/greetings"
+  get "static_pages/help"
+  get "static_pages/about"
+
   resources :usuarios do
     resources :productos
   end
-
-  resources :productos
-
-  resources :juegos
-
-  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

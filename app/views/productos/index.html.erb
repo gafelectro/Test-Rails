@@ -11,7 +11,7 @@
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+ </tr>
 
 <% @productos.each do |producto| %>
   <tr>
@@ -21,9 +21,6 @@
     <td><%= producto.imagen_file_size %></td>
     <td><%= image_tag producto.imagen.url('thumb') %></td>
     <td>
-<% @usuarios.each do |usuario| %>
-    <%= usuario.name %>
-<% end %>
     <td><%= link_to 'Show', producto %></td>
     <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
     <td><%= link_to 'Destroy', producto, confirm: 'Are you sure?', method: :delete %></td>
@@ -37,28 +34,33 @@
 
 
 <h1>Listing usuarios</h1>
+Muestra de usuarios segun su tipo</br>
+<%= select("post", "usuario_id", @usuariostipo.collect {|p| [p.tipousuario]}, {:include_blank => 'None'}) %>
+<button type="button" onClick=saludo('aaaaaaaaa')>Try it</button>
+<p id="demo"></p>
 
-<table>
+
+
+
+
+<% @usu.each do |usu| %>
+</br>
+  <table>
   <tr>
     <th>Name</th>
     <th>Edad</th>
-    <th>Avatar</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>tipo</th>
   </tr>
 
-<% @usuarios.each do |usuario| %>
   <tr>
-    <td><%= usuario.name %></td>
-    <td><%= usuario.edad %></td>
-    <td><%= image_tag usuario.avatar.url('thumb') %>
-    <td><%= link_to 'Show', usuario %></td>
-    <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-    <td><%= link_to 'Destroy', usuario, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= usu.name %></td>
+    <td><%= usu.edad %></td>
+    <td><%= usu.tipousuario %></td>
+
   </tr>
-<% end %>
+
 </table>
+<% end %>
 
 <br />
 

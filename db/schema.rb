@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120626164134) do
+ActiveRecord::Schema.define(:version => 20120723170800) do
 
   create_table "juegos", :force => true do |t|
     t.string   "caballo"
@@ -31,7 +31,16 @@ ActiveRecord::Schema.define(:version => 20120626164134) do
     t.string   "imagen_content_type"
     t.string   "imagen_file_size"
     t.string   "imagen_updated_at"
-    t.integer  "user_id"
+    t.integer  "usuario_id"
+  end
+
+  add_index "productos", ["usuario_id"], :name => "index_productos_on_usuario_id"
+
+  create_table "saludos", :force => true do |t|
+    t.string   "saludo"
+    t.integer  "hora"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tempos", :id => false, :force => true do |t|
@@ -58,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20120626164134) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "tipousuario"
   end
 
 end

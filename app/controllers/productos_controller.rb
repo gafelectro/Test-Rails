@@ -1,9 +1,13 @@
 class ProductosController < ApplicationController
   # GET /productos
   # GET /productos.json
+
   def index
-    @productos = Producto.all
+    @productos = Producto.search_and_paginate()
     @usuarios = Usuario.all
+    #@usuariostipo = Usuario.find(:all, :select => "DISTINCT tipousuario")
+    @usuariostipo = Usuario.find(:all, :conditions => 'tipousuario = "boss"')
+    @usu = Usuario.where(:tipousuario => 'student')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @productos }
